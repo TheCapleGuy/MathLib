@@ -238,6 +238,29 @@ TEST(matrix3, multiplication)
 	EXPECT_TRUE(m1 == m3);
 }
 
+TEST(matrix3, GetTranslationMatrix)
+{
+	Vector2 v1(3, -7);
+	Matrix3 m = m.GetTranslationMatrix(v1);
+	Matrix3 solution(
+		1, 0, 3,
+		0, 1, -7,
+		0, 0, 1);
+	EXPECT_TRUE(m == solution);
+}
+
+TEST(matrix3, GetRotationMatrix)
+{
+	float x = 0;
+	Matrix3 m1 = m1.GetRotationMatrix(x);
+	Matrix3 m2(
+		cos(x), -sin(x), 0,
+		sin(x), cos(x), 0,
+		0, 0, 1);
+
+	EXPECT_TRUE(m1 == m2);
+}
+
 int _tmain(int argc, _TCHAR* argv[])
 {
 	

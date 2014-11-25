@@ -90,6 +90,9 @@ public:
 	Matrix3 operator -=(Matrix3& a_RHS);
 	Matrix3 operator *=(Matrix3& a_RHS);
 
+	Matrix3 GetTranslationMatrix(Vector2& a_RHS);
+	Matrix3 GetRotationMatrix(float theta);
+
 	float m_matrixArray[3][3];
 
 };

@@ -121,8 +121,6 @@ bool Matrix3::operator==(Matrix3& a_RHS)
 	return true;
 }
 
-
-
 Matrix3 Matrix3::Identity()
 {
 	Matrix3 temp;
@@ -150,6 +148,30 @@ Matrix3& Matrix3::Transpose()
 	
 	*this = temp;
 	return *this;
+}
+
+Matrix3 Matrix3::GetTranspose()
+{
+	Matrix3 result = *this;
+	return result.Transpose();
+	
+}
+ 
+Matrix3 Matrix3::GetTranslationMatrix(Vector2& a_RHS)
+{
+	Matrix3 m = Identity();
+	m.m_matrixArray[0][2] = a_RHS.x;
+	m.m_matrixArray[1][2] = a_RHS.y;
+	return m;
+}
+
+Matrix3 Matrix3::GetRotationMatrix(float theta)
+{
+	Matrix3 RotateMatrix(
+		cos(theta), -sin(theta), 0,
+		sin(theta), cos(theta), 0,
+		0, 0, 1);
+	return RotateMatrix;
 }
 
 Matrix3::~Matrix3()
