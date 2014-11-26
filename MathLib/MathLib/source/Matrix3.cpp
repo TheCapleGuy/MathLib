@@ -164,7 +164,9 @@ Matrix3 Matrix3::GetTranslationMatrix(Vector2& a_RHS)
 	m.m_matrixArray[1][2] = a_RHS.y;
 	return m;
 }
-
+/* 
+Uses Matrix, takes in theta (radians)
+*/
 Matrix3 Matrix3::GetRotationMatrix(float theta)
 {
 	Matrix3 RotateMatrix(

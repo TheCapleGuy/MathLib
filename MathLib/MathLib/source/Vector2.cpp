@@ -108,6 +108,18 @@ float Vector2::DotProduct(Vector2& other)
 	return ((temp.x * other.x) + (temp.y * other.y));
 }
 
+Vector2 Vector2::Lerp(Vector2& end, const float percentage)
+{
+	Vector2 begin = *this;
+	return begin + (end - begin) * percentage;
+
+}
+
+Vector2 Vector2::Lerp(Vector2& begin, Vector2& end, const float percentage)
+{
+	return begin + (end - begin) * percentage;
+}
+
 Vector2::~Vector2()
 {
 

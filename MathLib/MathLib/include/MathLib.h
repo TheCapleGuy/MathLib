@@ -29,7 +29,9 @@ public:
 	Vector2 GetNormal();
 	float VectorDistance(Vector2& other);
 	float DotProduct(Vector2& other);
-
+	Vector2 CrossProduct(Vector2& a_RHS);
+	Vector2 Lerp(Vector2& end, const float percentage);
+	static Vector2 Lerp(Vector2& begin, Vector2& end, const float percentage);
 };
 // 3 Dimentional Vector Math
 class Vector3
@@ -53,6 +55,9 @@ public:
 	Vector3 GetNormal();
 	float VectorDistance(Vector3 &other);
 	float DotProduct(Vector3 &other);
+	Vector3 CrossProduct(Vector3& a_RHS);
+	Vector3 Lerp(Vector3& end, const float percentage);
+	static Vector3 Lerp(Vector3& begin, Vector3& end, const float percentage);
 
 };
 // 2 Dimentional Matrix Math

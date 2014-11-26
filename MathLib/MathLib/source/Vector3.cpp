@@ -110,6 +110,26 @@ float Vector3::DotProduct(Vector3 &other)
 	return ((temp.x * other.x) + (temp.y * other.y) + (temp.z * other.z));
 }
 
+Vector3 Vector3::CrossProduct(Vector3& a_RHS)
+{
+	Vector3 product;
+	product.x = ((y * a_RHS.z) - (z * a_RHS.y));
+	product.y = ((z * a_RHS.x) - (x * a_RHS.z));
+	product.z = ((x * a_RHS.y) - (y * a_RHS.x));
+	return product;
+}
+
+Vector3 Vector3::Lerp(Vector3& end, const float percentage)
+{
+	Vector3 begin = *this;
+	return begin + (end - begin) * percentage;
+}
+
+Vector3 Vector3::Lerp(Vector3& begin, Vector3& end, const float percentage)
+{
+	return begin + (end - begin) * percentage;
+}
+
 Vector3::~Vector3()
 {
 

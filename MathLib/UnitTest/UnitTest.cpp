@@ -79,6 +79,33 @@ TEST(vector2, vectordistance)
 	EXPECT_TRUE(distance == expectedResult);
 }
 
+TEST(vector2, lerp)
+{
+	Vector2 v1(0,0);
+	Vector2 v2(5,5);
+	v1 = v1.Lerp(v2, .5f);
+	Vector2 result(2.5, 2.5);
+
+	EXPECT_TRUE(v1 == result);
+	
+	v1 = Vector2(5,5);
+	v2 = Vector2(2,2);
+	v1 = v1.Lerp(v2, .5f);
+	result = Vector2(3.5, 3.5);
+
+	EXPECT_TRUE(v1 == result);
+	
+}
+
+TEST(vector2, lerp2vectors)
+{
+	Vector2 v1(0,0);
+	Vector2 v2(5,5);
+	Vector2 result(2.5, 2.5);
+
+	EXPECT_TRUE(Vector2::Lerp(v1, v2, .5f) == result);
+}
+
 // Vector3 Tests
 TEST(vector3, equality)
 {
@@ -152,6 +179,42 @@ TEST(vector3, vectordistance)
 	float distance = v1.VectorDistance(v2);
 	float expectedResult = 12.328828005938;
 	EXPECT_TRUE(distance == expectedResult);
+}
+
+TEST(vector3, crossproduct)
+{
+	Vector3 v1(3,2,-6);
+	Vector3 v2(6, -1, 4);
+	Vector3 v3 = v1.CrossProduct(v2);
+	Vector3 v4(2, -48, -15);
+
+	EXPECT_TRUE(v3 == v4);
+}
+
+TEST(vector3, lerp)
+{
+	Vector3 v1(0, 0, 0);
+	Vector3 v2(5, 5, 5);
+	v1 = v1.Lerp(v2, .5f);
+	Vector3 result(2.5, 2.5, 2.5);
+
+	EXPECT_TRUE(v1 == result);
+
+	v1 = Vector3(5, 5, 5);
+	v2 = Vector3(2, 2, 2);
+	v1 = v1.Lerp(v2, .5f);
+	result = Vector3(3.5, 3.5, 3.5);
+
+	EXPECT_TRUE(v1 == result);
+}
+
+TEST(vector3, lerp2vectors)
+{
+	Vector3 v1(0, 0, 0);
+	Vector3 v2(5, 5, 5);
+	Vector3 result(2.5, 2.5, 2.5);
+
+	EXPECT_TRUE(Vector3::Lerp(v1, v2, .5f) == result);
 }
 
 // Matrix3 tests
