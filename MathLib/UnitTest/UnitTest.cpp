@@ -373,6 +373,11 @@ TEST(matrix4, multiplication)
 	EXPECT_TRUE(m1 == result);
 }
 
+TEST(matrix4, orthoprojection)
+{
+
+}
+
 int _tmain(int argc, _TCHAR* argv[])
 {
 	
