@@ -80,10 +80,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\Matrix3.cpp" />
+    <ClCompile Include="source\Matrix4.cpp" />
     <ClCompile Include="source\Vector2.cpp" />
     <ClCompile Include="source\Vector3.cpp">
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
+    <ClCompile Include="source\Vector4.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\MathLib.h" />

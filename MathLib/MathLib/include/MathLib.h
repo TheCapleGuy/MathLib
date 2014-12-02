@@ -1,6 +1,8 @@
 #ifndef _MATHLIB_H_
 #define _MATHLIB_H_
 #include <math.h>
+#include <ostream>
+
 
 // 2 Dimentional Vector Math
 class Vector2
@@ -65,20 +67,14 @@ class Matrix3
 {
 public:
 	Matrix3();
-	Matrix3(float const m00,
-		float const m01,
-		float const m02,
-		float const m10,
-		float const m11,
-		float const m12,
-		float const m20,
-		float const m21,
-		float const m22);
+	Matrix3(float const m00, float const m01, float const m02,
+			float const m10, float const m11, float const m12,
+			float const m20, float const m21, float const m22);
 	Matrix3(Matrix3& a_RHS);
 
 	~Matrix3();
 
-	static Matrix3 Identity();
+	void Identity();
 
 	Matrix3& Transpose();
 
@@ -102,9 +98,39 @@ public:
 
 };
 // 3 dimentional Matrix Math
+class Matrix4
+{
+public:
+	Matrix4();
+	Matrix4(float const m00, float const m01, float const m02, float const m03,
+			float const m10, float const m11, float const m12, float const m13,
+			float const m20, float const m21, float const m22, float const m23,
+			float const m30, float const m31, float const m32, float const m33);
+	Matrix4(Matrix4& a_RHS);
+	void Identity();
+	Matrix4 OrthoProjection(const float right, const float left, const float top, const float bottom, const float far, const float near);
 
+	bool operator==(Matrix4& a_RHS);
+	Matrix4 operator=(Matrix4& a_RHS);
+	friend std::ostream& operator<<(std::ostream& out, Matrix4& a_RHS);
+	Matrix4 operator+(Matrix4& a_RHS);
+	Matrix4 operator-(Matrix4& a_RHS);
+	Matrix4 operator*(Matrix4& a_RHS);
+	
+	
+	float m_matrixArray[4][4];
+	~Matrix4();
+};
 // Vector 4 Math
+class Vector4
+{
+public:
+	float x, y, z, w;
+	Vector4(float a_x, float a_y, float a_z, float a_w);
+	~Vector4();
 
+	float DotProduct(Vector4& a_RHS);
+};
 //Misc Math
 
 #endif

@@ -90,8 +90,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\MathLib\source\Matrix3.cpp" />
+    <ClCompile Include="..\MathLib\source\Matrix4.cpp" />
     <ClCompile Include="..\MathLib\source\Vector2.cpp" />
     <ClCompile Include="..\MathLib\source\Vector3.cpp" />
+    <ClCompile Include="..\MathLib\source\Vector4.cpp" />
     <ClCompile Include="stdafx.cpp" />
     <ClCompile Include="UnitTest.cpp" />
   </ItemGroup>

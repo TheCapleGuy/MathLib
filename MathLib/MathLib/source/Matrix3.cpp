@@ -62,7 +62,7 @@ Matrix3 Matrix3::operator+(Matrix3& a_RHS)
 	return temp;
 }
 
-Matrix3 Matrix3::operator -(Matrix3& a_RHS)
+Matrix3 Matrix3::operator-(Matrix3& a_RHS)
 {
 	Matrix3 temp;
 	for (int col = 0; col < 3; col++)
@@ -121,14 +121,22 @@ bool Matrix3::operator==(Matrix3& a_RHS)
 	return true;
 }
 
-Matrix3 Matrix3::Identity()
+void Matrix3::Identity()
 {
-	Matrix3 temp;
 	for (int i = 0; i < 3; i++)
 	{
-		temp.m_matrixArray[i][i] = 1;
+		for (int j = 0; j < 3; j++)
+		{
+			if (i == j)
+			{
+				m_matrixArray[i][j] = 1;
+			}
+			else
+			{
+				m_matrixArray[i][j] = 0;
+			}
+		}
 	}
-	return temp;
 }
 
 Matrix3& Matrix3::Transpose()
@@ -159,7 +167,8 @@ Matrix3 Matrix3::GetTranspose()
  
 Matrix3 Matrix3::GetTranslationMatrix(Vector2& a_RHS)
 {
-	Matrix3 m = Identity();
+	Matrix3 m;
+	m.Identity();
 	m.m_matrixArray[0][2] = a_RHS.x;
 	m.m_matrixArray[1][2] = a_RHS.y;
 	return m;

@@ -324,6 +324,55 @@ TEST(matrix3, GetRotationMatrix)
 	EXPECT_TRUE(m1 == m2);
 }
 
+//Matrix4 Tests
+TEST(matrix4, makingMatrices)
+{
+	Matrix4 m2(00, 01, 02, 03,
+		10, 11, 12, 13,
+		20, 21, 22, 23,
+		30, 31, 32, 33);
+	Matrix4	m1(m2);
+	EXPECT_TRUE(m1 == m2);
+
+	m1 = m1 + m2;
+	Matrix4 result(00, 02, 04, 06,
+		20, 22, 24, 26,
+		40, 42, 44, 46,
+		60, 62, 64, 66);
+	EXPECT_TRUE(m1 == result);
+
+	m1 = m1 - m2;
+	result = m2;
+	EXPECT_TRUE(m1 == result);
+}
+
+TEST(matrix4, identitymatrix)
+{
+	Matrix4 m1(1, 0, 0, 0,
+		0, 1, 0, 0,
+		0, 0, 1, 0,
+		0, 0, 0, 1);
+
+	Matrix4 iD;
+	iD.Identity();
+	EXPECT_TRUE(m1 == iD);
+}
+
+TEST(matrix4, multiplication)
+{
+	Matrix4 m1(2, 2, 2, 2,
+		4, 4, 4, 4,
+		6, 6, 6, 6,
+		8, 8, 8, 8);
+	Matrix4 m2(m1);
+	Matrix4 result(40, 40, 40, 40,
+		80, 80, 80, 80,
+		120, 120, 120, 120,
+		160, 160, 160, 160);
+	m1 = m1 * m2;
+	EXPECT_TRUE(m1 == result);
+}
+
 int _tmain(int argc, _TCHAR* argv[])
 {
 	
@@ -339,4 +388,3 @@ int _tmain(int argc, _TCHAR* argv[])
 	return 0;
 	
 }
-
