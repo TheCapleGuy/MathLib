@@ -1,9 +1,8 @@
-// UnitTest.cpp : Defines the entry point for the console application.
-//
-
 #include "stdafx.h"
 #include "gtest/gtest.h"
 #include "MathLib.h"
+
+
 // Vector2 Tests
 TEST(vector2, equality)
 {
@@ -11,14 +10,12 @@ TEST(vector2, equality)
 	Vector2 v2;
 	EXPECT_TRUE(v1 == v2);
 }
-
 TEST(vector2, copying)
 {
 	Vector2 v1(6, 5);
 	Vector2 v2(v1);
 	EXPECT_TRUE(v1 == v2);
 }
-
 TEST(vector2, addition)
 {
 	Vector2 v1(6, 5);
@@ -27,7 +24,6 @@ TEST(vector2, addition)
 	v1 = v2 + v1;
 	EXPECT_TRUE(v1 == v3);
 }
-
 TEST(vector2, subtraction)
 {
 	Vector2 v1(6, 5);
@@ -36,7 +32,6 @@ TEST(vector2, subtraction)
 	v1 = v2 - v1;
 	EXPECT_TRUE(v1 == v3);
 }
-
 TEST(vector2, scalar)
 {
 	Vector2 v1(6, 5);
@@ -44,7 +39,6 @@ TEST(vector2, scalar)
 	v1 = v1 * 2;
 	EXPECT_TRUE(v1 == v3);
 }
-
 TEST(vector2, multiplication)
 {
 	Vector2 v1(6, 5);
@@ -53,14 +47,12 @@ TEST(vector2, multiplication)
 	v1 = v1 * v2;
 	EXPECT_TRUE(v1 == v3);
 }
-
 TEST(vector2, magnitude)
 {
 	Vector2 v1(4, 5);
 	float magnitude = 6.4031;
 	EXPECT_NEAR(magnitude, v1.Magnitude(), .0001);
 }
-
 TEST(vector2, dotproduct)
 {
 	Vector2 v1(2, 3);
@@ -69,7 +61,6 @@ TEST(vector2, dotproduct)
 	float expectedResult = 23;
 	EXPECT_TRUE(dotProduct == expectedResult);
 }
-
 TEST(vector2, vectordistance)
 {
 	Vector2 v1(2, 3);
@@ -78,7 +69,6 @@ TEST(vector2, vectordistance)
 	float expectedResult = sqrt(8);
 	EXPECT_TRUE(distance == expectedResult);
 }
-
 TEST(vector2, lerp)
 {
 	Vector2 v1(0,0);
@@ -96,7 +86,6 @@ TEST(vector2, lerp)
 	EXPECT_TRUE(v1 == result);
 	
 }
-
 TEST(vector2, lerp2vectors)
 {
 	Vector2 v1(0,0);
@@ -113,14 +102,12 @@ TEST(vector3, equality)
 	Vector3 v2(1,2,3);
 	EXPECT_TRUE(v1 == v2);
 }
-
 TEST(vector3, copying)
 {
 	Vector3 v1(6, 5, 7);
 	Vector3 v2(v1);
 	EXPECT_TRUE(v1 == v2);
 }
-
 TEST(vector3, addition)
 {
 	Vector3 v1(6, 5, 7);
@@ -129,7 +116,6 @@ TEST(vector3, addition)
 	v1 = v2 + v1;
 	EXPECT_TRUE(v1 == v3);
 }
-
 TEST(vector3, subtraction)
 {
 	Vector3 v1(6, 5, 2);
@@ -138,7 +124,6 @@ TEST(vector3, subtraction)
 	v1 = v2 - v1;
 	EXPECT_TRUE(v1 == v3);
 }
-
 TEST(vector3, scalar)
 {
 	Vector3 v1(6, 5, 3);
@@ -146,7 +131,6 @@ TEST(vector3, scalar)
 	v1 = v1 * 2;
 	EXPECT_TRUE(v1 == v3);
 }
-
 TEST(vector3, multiplication)
 {
 	Vector3 v1(6, 5, 4);
@@ -155,14 +139,12 @@ TEST(vector3, multiplication)
 	v1 = v1 * v2;
 	EXPECT_TRUE(v1 == v3);
 }
-
 TEST(vector3, magnitude)
 {
 	Vector3 v1(4, 5, 6);
 	float magnitude = sqrt(77);
 	EXPECT_NEAR(magnitude, v1.Magnitude(), .0001);
 }
-
 TEST(vector3, dotproduct)
 {
 	Vector3 v1(2, 3, 6);
@@ -171,7 +153,6 @@ TEST(vector3, dotproduct)
 	float expectedResult = 41;
 	EXPECT_TRUE(dotProduct == expectedResult);
 }
-
 TEST(vector3, vectordistance)
 {
 	Vector3 v1(2, 3, -10);
@@ -180,7 +161,6 @@ TEST(vector3, vectordistance)
 	float expectedResult = 12.328828005938;
 	EXPECT_TRUE(distance == expectedResult);
 }
-
 TEST(vector3, crossproduct)
 {
 	Vector3 v1(3,2,-6);
@@ -190,7 +170,6 @@ TEST(vector3, crossproduct)
 
 	EXPECT_TRUE(v3 == v4);
 }
-
 TEST(vector3, lerp)
 {
 	Vector3 v1(0, 0, 0);
@@ -207,7 +186,6 @@ TEST(vector3, lerp)
 
 	EXPECT_TRUE(v1 == result);
 }
-
 TEST(vector3, lerp2vectors)
 {
 	Vector3 v1(0, 0, 0);
@@ -231,7 +209,6 @@ TEST(matrix3, transpose)
 	m1.Transpose();
 	EXPECT_TRUE(m1 == m2);
 }
-
 TEST(matrix3, assignment)
 {
 	Matrix3 m1(
@@ -245,7 +222,6 @@ TEST(matrix3, assignment)
 	Matrix3 m3(m2);
 	EXPECT_TRUE(m1 == m3);
 }
-
 TEST(matrix3, addition)
 {
 	Matrix3 m1(
@@ -264,7 +240,6 @@ TEST(matrix3, addition)
 	m2 = m2 + m3;
 	EXPECT_TRUE(m1 == m2);
 }
-
 TEST(matrix3, subtraction)
 {
 	Matrix3 m1(
@@ -282,7 +257,6 @@ TEST(matrix3, subtraction)
 	m1 = m1 - m2;
 	EXPECT_TRUE(m1 == m3);
 }
-
 TEST(matrix3, multiplication)
 {
 	Matrix3 m1(
@@ -300,7 +274,6 @@ TEST(matrix3, multiplication)
 	m1 = m1 * m2;
 	EXPECT_TRUE(m1 == m3);
 }
-
 TEST(matrix3, GetTranslationMatrix)
 {
 	Vector2 v1(3, -7);
@@ -311,7 +284,6 @@ TEST(matrix3, GetTranslationMatrix)
 		0, 0, 1);
 	EXPECT_TRUE(m == solution);
 }
-
 TEST(matrix3, GetRotationMatrix)
 {
 	float x = 0;
@@ -345,7 +317,6 @@ TEST(matrix4, makingMatrices)
 	result = m2;
 	EXPECT_TRUE(m1 == result);
 }
-
 TEST(matrix4, identitymatrix)
 {
 	Matrix4 m1(1, 0, 0, 0,
@@ -357,7 +328,6 @@ TEST(matrix4, identitymatrix)
 	iD.Identity();
 	EXPECT_TRUE(m1 == iD);
 }
-
 TEST(matrix4, multiplication)
 {
 	Matrix4 m1(2, 2, 2, 2,
@@ -372,11 +342,58 @@ TEST(matrix4, multiplication)
 	m1 = m1 * m2;
 	EXPECT_TRUE(m1 == result);
 }
-
 TEST(matrix4, orthoprojection)
+{
+	//test, once i figure one out...
+}
+
+//Vector4 Tests
+TEST(vector4, dotproduct)
+{
+	Vector4 v1(2,4,3,1);
+	Vector4 v2 = v1;
+	EXPECT_TRUE(v1 == v2);
+
+	float dotProduct = v1.DotProduct(v2);
+	float result = 30;
+	EXPECT_TRUE(dotProduct == result);
+
+}
+TEST(vector4, operatoroverload)
+{
+	Vector4 v1(3, 2, -8, 5);
+	Vector4 v2(v1);
+	Vector4 multiply = v2 * v1;
+	Vector4 result(9, 4, 64, 25);
+	EXPECT_TRUE(multiply == result);
+
+	v1 = v2 + v1;
+	result = Vector4(6, 4, -16, 10);
+	EXPECT_TRUE(v1 == result);
+
+	Vector4 v3(4, 4 ,4 ,4); 
+	Vector4 v4(6, 6, 6, 6);
+	v1 = v4 - v3;
+	result = Vector4(2, 2, 2, 2);
+	EXPECT_TRUE(v1 == result);
+
+	v1 = v1 * 3.f;
+	result = Vector4(6,6,6,6);
+	EXPECT_TRUE(v1 == result);
+}
+TEST(vector4, hexadecimal)
 {
 
 }
+
+//MiscMath Tests
+TEST(miscmath, lerp)
+{
+	float lerp = MiscMath::LERP(1, 10, .25);
+	float result = 3.25f; 
+	EXPECT_TRUE(lerp == result);
+}
+
 
 int _tmain(int argc, _TCHAR* argv[])
 {

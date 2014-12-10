@@ -1,7 +1,10 @@
 #ifndef _MATHLIB_H_
 #define _MATHLIB_H_
-#include <math.h>
+
+#define _USE_MATH_DEFINES
+#include <cmath>
 #include <ostream>
+
 
 
 // 2 Dimentional Vector Math
@@ -126,11 +129,30 @@ class Vector4
 {
 public:
 	float x, y, z, w;
+	Vector4(){ x = 0.f; y = 0.f; z = 0.f; w = 0.f; }
 	Vector4(float a_x, float a_y, float a_z, float a_w);
-	~Vector4();
+	void operator=(Vector4& a_RHS);
+	bool operator==(Vector4& a_RHS);
+	friend std::ostream& operator<<(std::ostream& out, Vector4& a_RHS);
+	Vector4 operator+(Vector4& a_RHS);
+	Vector4 operator-(Vector4& a_RHS);
+	Vector4 operator*(float a_scalar);
+	Vector4 operator*(Vector4& a_RHS);
 
+	~Vector4(){}
 	float DotProduct(Vector4& a_RHS);
+	float Magnitude();
+	void Normalise();
+
+
 };
 //Misc Math
-
+class MiscMath
+{
+public:
+	/*percent between 0 and 1*/
+	static float LERP(float begin, float end, float percent){ return begin + (end - begin) * percent; }
+	static float degreesToRadians(float angleInDegs) { return (angleInDegs * M_PI) / 180; }
+	static float radiansToDegrees(float angleInRads) { return (angleInRads * 180) / M_PI; }
+};
 #endif
