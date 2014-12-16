@@ -61,8 +61,7 @@
       <AdditionalDependencies>gtestd.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>
-      </Command>
+      <Command>"$(TargetDir)$(TargetFileName)" </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -92,6 +91,7 @@
   <ItemGroup>
     <ClCompile Include="..\MathLib\source\Matrix3.cpp" />
     <ClCompile Include="..\MathLib\source\Matrix4.cpp" />
+    <ClCompile Include="..\MathLib\source\MiscMath.cpp" />
     <ClCompile Include="..\MathLib\source\Vector2.cpp" />
     <ClCompile Include="..\MathLib\source\Vector3.cpp" />
     <ClCompile Include="..\MathLib\source\Vector4.cpp" />

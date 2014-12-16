@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include "gtest/gtest.h"
 #include "MathLib.h"
 
@@ -454,7 +453,7 @@ TEST(miscmath, nextpowoftwo)
 	EXPECT_TRUE(expected == result);
 }
 
-int _tmain(int argc, _TCHAR* argv[])
+int main(int argc, char * argv[])
 {
 	
 	/*The method is initializes the Google framework and must be called before RUN_ALL_TESTS */

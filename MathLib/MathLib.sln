@@ -9,6 +9,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MathLib_Dynamic", "MathLib_
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnitTest", "UnitTest\UnitTest.vcxproj", "{23C9282A-8873-4ECE-8887-710E09E1F0DA}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnitTest_Dynamic", "UnitTest_Dynamic\UnitTest_Dynamic.vcxproj", "{9E42738F-A71D-45F2-AEBF-14F0B657EBC1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -27,6 +29,10 @@ Global
 		{23C9282A-8873-4ECE-8887-710E09E1F0DA}.Debug|Win32.Build.0 = Debug|Win32
 		{23C9282A-8873-4ECE-8887-710E09E1F0DA}.Release|Win32.ActiveCfg = Release|Win32
 		{23C9282A-8873-4ECE-8887-710E09E1F0DA}.Release|Win32.Build.0 = Release|Win32
+		{9E42738F-A71D-45F2-AEBF-14F0B657EBC1}.Debug|Win32.ActiveCfg = Debug|Win32
+		{9E42738F-A71D-45F2-AEBF-14F0B657EBC1}.Debug|Win32.Build.0 = Debug|Win32
+		{9E42738F-A71D-45F2-AEBF-14F0B657EBC1}.Release|Win32.ActiveCfg = Release|Win32
+		{9E42738F-A71D-45F2-AEBF-14F0B657EBC1}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
